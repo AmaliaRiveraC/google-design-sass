@@ -1,0 +1,57 @@
+@import "variables";
+
+/* Grid */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.row {
+	&:before {
+		content: "";
+		display: table;
+	}
+	&:after {
+		@extend .row:before;
+		clear: both;
+	}
+}
+
+[class*="col-"] {
+	min-height: 7px;
+	padding: 12px;
+	float: left;
+}
+
+@function widthColumns($columns) {
+	@return percentage(($columns/12));
+}
+
+@for $numColumns from 1 through 12 {
+	.col-#{$numColumns} {
+		width: widthColumns($numColumns);
+	}
+}
+
+
+/*Estilo secciones*/
+
+header {
+	text-align: $center;
+	& h1 {
+		color: $grisTitulos;
+	}
+	.menu {
+		list-style: $none;
+		& a {
+			text-decoration: $none;
+		}
+	}
+}
