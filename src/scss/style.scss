@@ -1,73 +1,53 @@
-	@import "variables";
-	/* Grid */
-	
-	* {
-		box-sizing: border-box;
-		margin: 0;
-		padding: 0;
+@import "variables";
+@import "grid";
+@import "mixin";
+
+/*Estilo secciones*/
+
+header {
+	margin: $margin;
+	text-align: $center;
+	& .logo {
+		width: 20%;
 	}
-	
-	.container {
-		width: 100%;
-		margin: 0 auto;
+	& .search {
+		float: right;
 	}
-	
-	.row {
-		&:before {
-			content: "";
-			display: table;
-		}
-		&:after {
-			@extend .row:before;
-			clear: both;
-		}
-	}
-	
-	[class*="col-"] {
-		min-height: 7px;
-		padding: 12px;
-		float: left;
-	}
-	
-	@function widthColumns($columns) {
-		@return percentage(($columns/12));
-	}
-	
-	@for $numColumns from 1 through 12 {
-		.col-#{$numColumns} {
-			width: widthColumns($numColumns);
+	.menu>li {
+		list-style: $none;
+		display: $inline-block;
+		padding-right: $padding-right;
+		font-size: 2vh;
+		& a {
+			text-decoration: $none;
+			color: $grisTexto;
+			font-weight: $font-weight;
+			text-transform: uppercase;
+			cursor: $pointer;
 		}
 	}
-	
-	@for $numColumns from 1 through 12 {
-		.col-#{$numColumns}-offset {
-			margin-left: widthColumns($numColumns);
-		}
+}
+
+
+/* section 2: News, style*/
+
+
+/* section Gallery*/
+
+h3 {
+	@include title;
+}
+
+.gallery {
+	& a {
+		color: $blue;
+		text-decoration: $none;
 	}
-	/*Estilo secciones*/
-	
-	header {
-		text-align: $center;
-		& .logo {
-			width: 30%;
-		}
-		& .search {
-			float: right;
-		}
-		.menu>li {
-			list-style: $none;
-			display: inline-block;
-			padding-right: $padding-right;
-			& a {
-				text-decoration: $none;
-				color: $grisTexto;
-				font-weight: $font-weight;
-				text-transform: uppercase;
-			}
-		}
-	}
-	/* Estilo seccion 2*/
-	
-	.new {
-		border-top: 4px solid #4285f4;
-	}
+}
+
+
+/* Border-top blue*/
+
+.new {
+	border-top: $border-top;
+}
