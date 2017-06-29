@@ -1,0 +1,18 @@
+@mixin title {
+	font: {
+		family: $font-family-title;
+		size: $font-size;
+		weight: $font-weight-title;
+		style: $font-style;
+	}
+	line-height: $line-height-title;
+	color: $grisTitulos;
+}
+
+@mixin date {
+	font: {
+		family:
+		size:
+		
+	}
+}
