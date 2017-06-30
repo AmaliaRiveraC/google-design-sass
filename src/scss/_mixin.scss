@@ -1,18 +1,25 @@
 @mixin title {
 	font: {
 		family: $font-family-title;
-		size: $font-size;
+		size: $font-size-title;
 		weight: $font-weight-title;
 		style: $font-style;
 	}
 	line-height: $line-height-title;
-	color: $grisTitulos;
+	color: darken($gray-title, 50%);
 }
 
 @mixin date {
+	font-family: $font-family-date;
+	color: lighten($gray-date, 30%);
+}
+
+@mixin paragraph {
 	font: {
-		family:
-		size:
-		
+		family: $font-family-p;
+		size: $font-size-p;
+		weight: $font-weight-p;
 	}
+	
+	color: lighten($gray-text, 20%);
 }
