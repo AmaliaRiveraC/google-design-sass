@@ -20,19 +20,19 @@ header {
 		font-size: 2vh;
 		& a {
 			text-decoration: $none;
-			color: $grisTexto;
-			font-weight: $font-weight;
+			color: $gray-text;
+			font-weight: $font-weight-title;
 			text-transform: uppercase;
 			cursor: $pointer;
 		}
 	}
 }
 
+/* Estilo de titulos, parrafos, fechas y etiquetas*/
 
-/* section 2: News, style*/
-
-
-/* section Gallery*/
+h1 {
+	color: $gray-title;
+}
 
 h3 {
 	@include title;
@@ -45,6 +45,13 @@ h3 {
 	}
 }
 
+.date {
+	@include date;
+}
+
+.paragraph {
+	@include paragraph;
+}
 
 /* Border-top blue*/
 
